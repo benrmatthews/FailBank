@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130922195825) do
+ActiveRecord::Schema.define(:version => 20130922201422) do
+
+  create_table "fails", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "lesson"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "fails", ["user_id", "created_at"], :name => "index_fails_on_user_id_and_created_at"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

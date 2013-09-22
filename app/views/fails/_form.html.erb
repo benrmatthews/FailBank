@@ -1,0 +1,14 @@
+<%= simple_form_for(@fail) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :lesson %>
+    <%= f.input :user_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

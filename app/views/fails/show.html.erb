@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @fail.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @fail.description %>
+</p>
+
+<p>
+  <b>Lesson:</b>
+  <%= @fail.lesson %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @fail.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_fail_path(@fail) %> |
+<%= link_to 'Back', fails_path %>
