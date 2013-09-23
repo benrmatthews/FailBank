@@ -1,4 +1,7 @@
+# encoding: utf-8
+
 Failbank::Application.routes.draw do
+  
   resources :fails
 
   authenticated :user do
