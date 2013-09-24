@@ -17,9 +17,10 @@
 
 <p>
   <b>User:</b>
-  <%= @fail.user_id %>
+  <%= @fail.user.name %>
 </p>
 
-
-<%= link_to 'Edit', edit_fail_path(@fail) %> |
+<% if current_user == pin.user %>
+  <%= link_to 'Edit', edit_fail_path(@fail) %> |
+<% end %>
 <%= link_to 'Back', fails_path %>

@@ -16,10 +16,12 @@
     <td><%= fail.name %></td>
     <td><%= fail.description %></td>
     <td><%= fail.lesson %></td>
-    <td><%= fail.user_id %></td>
+    <td><%= fail.user.name %></td>
     <td><%= link_to 'Show', fail %></td>
-    <td><%= link_to 'Edit', edit_fail_path(fail) %></td>
-    <td><%= link_to 'Destroy', fail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if current_user == pin.user %>
+      <td><%= link_to 'Edit', edit_fail_path(fail) %></td>
+      <td><%= link_to 'Destroy', fail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

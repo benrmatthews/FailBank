@@ -1,4 +1,6 @@
 class FailsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
+  
   # GET /fails
   # GET /fails.json
   def index
@@ -24,7 +26,7 @@ class FailsController < ApplicationController
   # GET /fails/new
   # GET /fails/new.json
   def new
-    @fail = Fail.new
+    @fail = current_user.fails.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,14 +36,14 @@ class FailsController < ApplicationController
 
   # GET /fails/1/edit
   def edit
-    @fail = Fail.find(params[:id])
+    @fail = current_user.fails.find(params[:id)
   end
 
   # POST /fails
   # POST /fails.json
   def create
-    @fail = Fail.new(params[:fail])
-
+    @fail = current_user.fails.new(params[:fail])
+    
     respond_to do |format|
       if @fail.save
         format.html { redirect_to @fail, notice: 'Fail was successfully created.' }
@@ -56,7 +58,7 @@ class FailsController < ApplicationController
   # PUT /fails/1
   # PUT /fails/1.json
   def update
-    @fail = Fail.find(params[:id])
+    @fail = current_user.fails.find(params[:id)
 
     respond_to do |format|
       if @fail.update_attributes(params[:fail])
@@ -72,7 +74,7 @@ class FailsController < ApplicationController
   # DELETE /fails/1
   # DELETE /fails/1.json
   def destroy
-    @fail = Fail.find(params[:id])
+    @fail = current_user.fails.find(params[:id)
     @fail.destroy
 
     respond_to do |format|
