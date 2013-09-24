@@ -2,9 +2,11 @@
   <div class="span3">
     <h3>User</h3>
     <p>User: <%= @user.name %></p>
-    <p>Email: <%= @user.email if @user.email %></p>
-  </div>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
   <div class="span6">
+    <%= render 'follow_form' if signed_in? %>
     <% if @user.fails.any? %>
       <h3>Fails (<%= @user.fails.count %>)</h3>
       <ol class="fails">
