@@ -20,7 +20,5 @@
   <%= @fail.user.name %>
 </p>
 
-<% if current_user == fail.user %>
-  <%= link_to 'Edit', edit_fail_path(@fail) %>
-<% end %>
+<%= link_to 'Edit', edit_fail_path(@fail) %>
 <%= link_to 'Back', fails_path %>
