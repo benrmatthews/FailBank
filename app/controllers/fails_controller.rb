@@ -36,7 +36,7 @@ class FailsController < ApplicationController
 
   # GET /fails/1/edit
   def edit
-    @fail = current_user.fails.find(params[:id)
+    @fail = current_user.fails.find(params[:id])
   end
 
   # POST /fails
@@ -58,7 +58,7 @@ class FailsController < ApplicationController
   # PUT /fails/1
   # PUT /fails/1.json
   def update
-    @fail = current_user.fails.find(params[:id)
+    @fail = current_user.fails.find(params[:id])
 
     respond_to do |format|
       if @fail.update_attributes(params[:fail])
@@ -74,7 +74,7 @@ class FailsController < ApplicationController
   # DELETE /fails/1
   # DELETE /fails/1.json
   def destroy
-    @fail = current_user.fails.find(params[:id)
+    @fail = current_user.fails.find(params[:id])
     @fail.destroy
 
     respond_to do |format|
