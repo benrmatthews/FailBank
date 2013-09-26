@@ -1,20 +1,49 @@
 <% if signed_in? %>
-  <div class="row-fluid">
-    <aside class="span3">
+  <div class="row">
+    <aside class="col-lg-3">
       <section>
         <%= render 'shared/user_info' %>
       </section>
       </aside>
   </div>  
 <% else %>
-  <div class="center hero-unit">
-    <h1>Fail Fast, Profit Faster</h1>
+    
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>FAIL FAST, PROFIT FASTER</h1>
+        <p>Fail Bank is a community where people share their failures, get support and advice, and discover tools and resources to do better next time.</p>
+        <p><a class="btn btn-primary btn-lg">Share Your Fail »</a></p>
+      </div>
+    </div>
 
-    <h2>
-      Fail Bank is a community where people share their failures, get advice and support, and discover tools and resources to do better next time.
-    </h2>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#">View details »</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#">View details »</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#">View details »</a></p>
+        </div>
+      </div>
 
-  </div>
+      <hr>
 
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+      
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  
+
 <% end %> 
