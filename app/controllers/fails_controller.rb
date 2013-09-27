@@ -4,7 +4,7 @@ class FailsController < ApplicationController
   # GET /fails
   # GET /fails.json
   def index
-    @fails = Fail.all
+    @fails = Fail.order("created_at desc").page(params[:page]).per_page(20)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -8,7 +8,7 @@
     <br />
         <%= render 'follow_form' if signed_in? %>  
   </div>
-  <div class="col-md-3">
+  <div class="col-md-6">
     <% if @user.fails.any? %>
       <h3>Fails (<%= @user.fails.count %>)</h3>
       <ol class="fails">

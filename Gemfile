@@ -17,6 +17,8 @@ gem 'figaro'
 gem 'rolify'
 gem 'simple_form'
 gem 'thin'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :development do
   gem 'better_errors'
