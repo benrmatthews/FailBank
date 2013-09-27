@@ -8,7 +8,10 @@ Failbank::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
 
-  resources :fails
+  resources :fails do
+    resources :comments
+  end
+  
   resources :relationships
   
   resources :users do

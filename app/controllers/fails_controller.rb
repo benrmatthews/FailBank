@@ -16,6 +16,9 @@ class FailsController < ApplicationController
   # GET /fails/1.json
   def show
     @fail = Fail.find(params[:id])
+    @commentable = @fail
+    @comments = @commentable.comments
+    @comment = Comment.new
 
     respond_to do |format|
       format.html # show.html.erb

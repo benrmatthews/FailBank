@@ -24,6 +24,11 @@
     <%= link_to 'Edit', edit_fail_path(@fail) %>
     <%= link_to 'Back', fails_path %>
     
+    <h2>Comments</h2>
+
+    <%= render "comments/form" %>
+    <%= render "comments/comments" %>
+    
   <div class="col-md-3">
   </div>
 </div>
