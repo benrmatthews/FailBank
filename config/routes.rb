@@ -2,6 +2,9 @@
 
 Failbank::Application.routes.draw do
   
+  resources :static_pages
+
+
   authenticated :user do
     root :to => 'home#index'
   end

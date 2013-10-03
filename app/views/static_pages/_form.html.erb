@@ -1,0 +1,18 @@
+<%= simple_form_for(@static_page) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :home %>
+    <%= f.input :about %>
+    <%= f.input :help %>
+    <%= f.input :faq %>
+    <%= f.input :contact %>
+    <%= f.input :blog %>
+    <%= f.input :terms %>
+    <%= f.input :privacy %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
