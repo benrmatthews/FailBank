@@ -1,6 +1,16 @@
 class StaticPagesController < ApplicationController
   # GET /static_pages
   # GET /static_pages.json
+  
+  def home
+    if signed_in?
+      @fail  = current_user.fails.build
+      @feed_items = current_user.feed.paginate(page: params[:page])
+    end
+  end
+  
+  
+  
   def index
     @static_pages = StaticPage.all
 
