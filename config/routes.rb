@@ -11,12 +11,12 @@ Failbank::Application.routes.draw do
   resources :fails do
     resources :comments
   end
-  
-  resources :relationships
-  
+   
   resources :users do
     member do
       get :following, :followers
     end
   end
+  
+  resources :relationships, only: [:create, :destroy]
 end
