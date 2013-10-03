@@ -18,7 +18,7 @@
     <span class="content"><%= link_to fail.name, fail %></span>
   </h3>
   <span class="timestamp">
-      Shared <%= time_ago_in_words(fail.created_at) %> ago by <%= link_to fail.user.name, fail.user %>
+    Shared <%= time_ago_in_words(fail.created_at) %> ago by <%= link_to fail.user.name, fail.user %> in <%= raw fail.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
     <br />
   </span>
   <br />

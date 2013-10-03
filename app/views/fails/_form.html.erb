@@ -5,6 +5,8 @@
     <%= f.input :name %>
     <%= f.input :description, as: :text, input_html: {rows: "5" } %>
     <%= f.input :lesson, as: :text, input_html: {rows: "5" } %>
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
   </div>
 <br />
   <div class="form-actions">

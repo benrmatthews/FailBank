@@ -10,6 +10,8 @@ Failbank::Application.routes.draw do
   match '/privacy', to: 'static_pages#privacy'
   match '/terms',   to: 'static_pages#terms'
   match '/contact', to: 'static_pages#contact'
+  
+  get 'tags/:tag', to: 'fails#index', as: :tag
     
   authenticated :user do
     root :to => 'home#index'
@@ -27,5 +29,6 @@ Failbank::Application.routes.draw do
     end
   end
   
+  resources :tags
   resources :relationships, only: [:create, :destroy]
 end
