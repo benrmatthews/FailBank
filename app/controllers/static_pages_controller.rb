@@ -9,7 +9,26 @@ class StaticPagesController < ApplicationController
     end
   end
   
+  def help
+  end
   
+  def about
+  end
+  
+  def contact
+  end
+  
+  def terms
+  end
+  
+  def privacy
+  end
+  
+  def faq
+  end
+  
+  def blog
+  end
   
   def index
     @static_pages = StaticPage.all
