@@ -20,7 +20,7 @@
   <style id="bitmark_stylesheet" type="text/css"></style>
     <title><%= content_for?(:title) ? yield(:title) : "Failbank" %></title>
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
