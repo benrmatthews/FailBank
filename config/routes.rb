@@ -14,7 +14,7 @@ Failbank::Application.routes.draw do
   get 'tags/:tag', to: 'fails#index', as: :tag
     
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'fails#index'
   end
   root :to => "home#index"
   devise_for :users
