@@ -74,11 +74,13 @@
       <li>Follow a Member</li>
     </ul>
     <br>
-    <h3>Newest Members</h3>
+    <h3>Community</h3>
     <ul>
-      <li>View All Members</li>
-      <li>Invite Members</li>
+      <li><%= link_to 'Newest Failures', users_path %></li>
+      <li><%= link_to 'View All Failures', users_path %></li>
     </ul>
+      <%= link_to 'Invite Failures', users_path, class: 'btn btn-success' %>
+    <br>
     <br>
     <h3>Popular Tags</h3>
     
