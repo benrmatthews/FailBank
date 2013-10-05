@@ -12,19 +12,6 @@
           <ul class="nav navbar-nav pull-right">
             <% if user_signed_in? %>
             <li>
-              <%= link_to 'New Fail', new_fail_path %>
-            </li>
-            <li>
-              <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-            </li>
-          <% else %>
-            <li>
-            <%= link_to 'Login', new_user_session_path %>
-            </li>
-          <% end %>
-          <% if user_signed_in? %>
-            
-            <li>
             <%= link_to 'Edit account', edit_user_registration_path %>
             </li>
             <% if current_user.has_role? :admin %>
@@ -32,7 +19,28 @@
               <%= link_to 'Admin', users_path %>
               </li>
             <% end %>
+            <% if user_signed_in? %>
+            <li>
+              <form class="navbar-form navbar-right">
+              <%= link_to 'New Fail', new_fail_path, class: "btn btn-danger" %>
+              </form>
+            </li>
+            <li>
+              <form class="navbar-form navbar-right">
+              <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-success" %>
+              </form>
+            </li>
           <% else %>
+            <li>
+            <%= link_to 'Login', new_user_session_path %>
+            </li>
+          <% end %>
+          <% else %>
+            <li>
+              <form class="navbar-form navbar-right">
+              <%= link_to "Sign in", new_user_session_path, class: "btn btn-success" %>
+              </form>
+            </li>
             <form class="navbar-form navbar-right">
               <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-danger"%>
             </form>
