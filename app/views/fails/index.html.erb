@@ -15,7 +15,8 @@
     <span class="content"><%= link_to fail.name, fail %></span>
   </h3>
   <span class="timestamp">
-    Shared <%= time_ago_in_words(fail.created_at) %> ago by <%= link_to fail.user.name, fail.user %> in <%= raw fail.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+    Shared <%= time_ago_in_words(fail.created_at) %> ago by <%= link_to fail.user.name, fail.user %><br>
+    Tags: <%= raw fail.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
     <br />
   </span>
   <br />
@@ -59,7 +60,13 @@
   </div>
   
   <div class="col-md-3">
-    <h3>Categories</h3>
+    <h3>Popular Tags</h3>
+    
+    <div id="tag_cloud">
+      <% tag_cloud Fail.tag_counts, %w{s m l} do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
+    </div>
     
   </div>  
 
