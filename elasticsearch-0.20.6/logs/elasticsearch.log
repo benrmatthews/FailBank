@@ -1,0 +1,16 @@
+[2013-10-07 19:59:37,227][INFO ][node                     ] [Smythe, Spencer] {0.20.6}[1107]: initializing ...
+[2013-10-07 19:59:37,239][INFO ][plugins                  ] [Smythe, Spencer] loaded [], sites []
+[2013-10-07 19:59:42,807][INFO ][node                     ] [Smythe, Spencer] {0.20.6}[1107]: initialized
+[2013-10-07 19:59:42,807][INFO ][node                     ] [Smythe, Spencer] {0.20.6}[1107]: starting ...
+[2013-10-07 19:59:43,264][INFO ][transport                ] [Smythe, Spencer] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.253.187:9300]}
+[2013-10-07 19:59:46,610][INFO ][cluster.service          ] [Smythe, Spencer] new_master [Smythe, Spencer][JjppbLNMQ3-QKPYEW9_HNw][inet[/192.168.253.187:9300]], reason: zen-disco-join (elected_as_master)
+[2013-10-07 19:59:46,691][INFO ][discovery                ] [Smythe, Spencer] elasticsearch/JjppbLNMQ3-QKPYEW9_HNw
+[2013-10-07 19:59:46,860][INFO ][http                     ] [Smythe, Spencer] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.253.187:9200]}
+[2013-10-07 19:59:46,862][INFO ][node                     ] [Smythe, Spencer] {0.20.6}[1107]: started
+[2013-10-07 19:59:46,965][INFO ][gateway                  ] [Smythe, Spencer] recovered [0] indices into cluster_state
+[2013-10-07 20:04:04,152][INFO ][cluster.metadata         ] [Smythe, Spencer] [fails] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2013-10-07 20:04:07,022][INFO ][cluster.metadata         ] [Smythe, Spencer] [fails] update_mapping [fail] (dynamic)
+[2013-10-07 20:11:19,005][INFO ][node                     ] [Smythe, Spencer] {0.20.6}[1107]: stopping ...
+[2013-10-07 20:11:19,832][INFO ][node                     ] [Smythe, Spencer] {0.20.6}[1107]: stopped
+[2013-10-07 20:11:19,833][INFO ][node                     ] [Smythe, Spencer] {0.20.6}[1107]: closing ...
+[2013-10-07 20:11:19,916][INFO ][node                     ] [Smythe, Spencer] {0.20.6}[1107]: closed

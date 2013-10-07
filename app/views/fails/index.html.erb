@@ -13,6 +13,13 @@
     
     <h1>Listing Fails</h1><br />
 
+    <%= form_tag fails_path, method: :get do %>
+      <p>
+        <%= text_field_tag :query, params[:query] %>
+        <%= submit_tag "Search", name: nil %>
+      </p>
+    <% end %>
+    
 <% @fails.each do |fail| %>
 <div class="col-md-12">
   <h3>
@@ -54,8 +61,6 @@
   </tr>
 <% end %>
 </table> -->
-
-<%= will_paginate @fails %>
 
 <br />
 
