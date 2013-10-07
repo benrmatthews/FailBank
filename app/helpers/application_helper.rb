@@ -16,6 +16,15 @@ module ApplicationHelper
       yield(tag, classes[index.round])
     end
   end
+  
+  # Returns the Gravatar (http://gravatar.com/) for the given user.
+  def gravatar_for(user, options = { size: 140 })
+    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+    size = options[:size]
+    gravatar = 
+    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
+    image_tag(gravatar_url, alt: user.name, class: "gravatar")
+  end
 
   def display_base_errors resource
     return '' if (resource.errors.empty?) or (resource.errors[:base].empty?)

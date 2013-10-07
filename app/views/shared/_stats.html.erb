@@ -6,10 +6,18 @@
     </strong>
     following
   </a>
+  <br>
   <a href="<%= followers_user_path(@user) %>">
     <strong id="followers" class="stat">
       <%= @user.followers.count %>
     </strong>
     followers
+  </a>
+  <br>
+  <a href="<%= user_path %>">
+    <strong id="fails" class="stat">
+      <%= @user.fails.count %>
+    </strong>
+    fails
   </a>
 </div>
