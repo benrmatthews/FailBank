@@ -11,6 +11,7 @@ Failbank::Application.routes.draw do
   match '/terms',   to: 'static_pages#terms'
   match '/contact', to: 'static_pages#contact'
   
+  
   get 'tags/:tag', to: 'fails#index', as: :tag
     
   authenticated :user do

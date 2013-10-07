@@ -5,9 +5,9 @@ class FailsController < ApplicationController
   # GET /fails.json
   def index
     if params[:tag]
-      @fails = Fail.tagged_with(params[:tag]).order("created_at desc").page(params[:page]).per_page(20).search(params)
+      @fails = Fail.tagged_with(params[:tag]).order("created_at desc").page(params[:page]).per_page(20)
     else
-      @fails = Fail.order("created_at desc").page(params[:page]).per_page(20).search(params)
+      @fails = Fail.order("created_at desc").page(params[:page]).per_page(20)
     end
 
     respond_to do |format|
