@@ -71,7 +71,7 @@ GEM
     daemons (1.1.9)
     database_cleaner (1.0.1)
     debug_inspector (0.0.2)
-    devise (3.1.0)
+    devise (3.1.1)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -83,7 +83,7 @@ GEM
       mail (~> 2.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    execjs (2.0.1)
+    execjs (2.0.2)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.1)
@@ -109,7 +109,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     mini_portile (0.5.1)
-    multi_json (1.8.0)
+    multi_json (1.8.1)
     multi_test (0.0.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
@@ -156,7 +156,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    sass (3.2.10)
+    sass (3.2.12)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -197,7 +197,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass (~> 2.3.2.2)
+  bootstrap-sass
   bootstrap-will_paginate
   cancan
   capybara

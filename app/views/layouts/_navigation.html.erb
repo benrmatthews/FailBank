@@ -22,12 +22,12 @@
             <% if user_signed_in? %>
             <li>
               <form class="navbar-form navbar-right">
-              <%= link_to 'New Fail', new_fail_path, class: "btn btn-danger" %>
+              <%= link_to 'New Fail', new_fail_path, class: "btn btn-primary" %>
               </form>
             </li>
             <li>
               <form class="navbar-form navbar-right">
-              <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-success" %>
+              <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-infom" %>
               </form>
             </li>
           <% else %>
@@ -38,11 +38,11 @@
           <% else %>
             <li>
               <form class="navbar-form navbar-right">
-              <%= link_to "Sign in", new_user_session_path, class: "btn btn-success" %>
+              <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
               </form>
             </li>
             <form class="navbar-form navbar-right">
-              <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-danger"%>
+              <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-info"%>
             </form>
           <% end %>
           
