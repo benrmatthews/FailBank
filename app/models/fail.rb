@@ -3,9 +3,6 @@ class Fail < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
   has_many :comments, as: :commentable
-  
-  include Tire::Model::Search
-  include Tire::Model::Callbacks
 
   belongs_to :user
 
@@ -36,13 +33,6 @@ class Fail < ActiveRecord::Base
   def tag_list=(names)
     self.tags = names.split(",").map do |n|
       Tag.where(name: n.strip).first_or_create!
-    end
-  end
-  
-  def self.search(params)
-    tire.search(load: true) do
-      query { string params[:query]} if params[:query].present?
-      filter :range, published_at: {lte: Time.zone.now }
     end
   end
   
