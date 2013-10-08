@@ -21,6 +21,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'tire'
 gem 'elasticsearch'
+gem 'activerecord-reputation-system', require: 'reputation_system'
 
 group :development do
   gem 'better_errors'

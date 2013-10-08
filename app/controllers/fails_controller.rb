@@ -5,9 +5,9 @@ class FailsController < ApplicationController
   # GET /fails.json
   def index
     if params[:tag]
-      @fails = Fail.tagged_with(params[:tag]).order("created_at desc").page(params[:page]).per_page(20)
+      @fails = Fail.find_with_reputation(:votes, :all, order: 'votes desc').tagged_with(params[:tag]).page(params[:page]).per_page(20)
     else
-      @fails = Fail.order("created_at desc").page(params[:page]).per_page(20)
+      @fails = Fail.find_with_reputation(:votes, :all, order: 'votes desc')
     end
     
     respond_to do |format|
@@ -88,5 +88,12 @@ class FailsController < ApplicationController
       format.html { redirect_to fails_url }
       format.json { head :no_content }
     end
+  end
+  
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @fail = Fail.find(params[:id])
+    @fail.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting!"
   end
 end

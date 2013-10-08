@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
                                    dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
   
+  has_reputation :votes, source: {reputation: :votes, of: :fails}, aggregated_by: :sum
+  has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :source
+  
   def feed
     Fail.from_users_followed_by(self)
   end
@@ -33,6 +36,10 @@ class User < ActiveRecord::Base
   def unfollow!(other_user)
     relationships.find_by_followed_id(other_user.id).destroy
   end
+  
+  def voted_for?(fail)
+    evaluations.where(target_type: fail.class, target_id: fail.id).present?
+  end 
 
   private
 

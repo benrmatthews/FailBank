@@ -1,8 +1,10 @@
 class Fail < ActiveRecord::Base
   attr_accessible :description, :lesson, :name, :user_id, :tag_list
+  
   has_many :taggings
   has_many :tags, through: :taggings
   has_many :comments, as: :commentable
+  has_reputation :votes, source: :user, aggregated_by: :sum
 
   belongs_to :user
 

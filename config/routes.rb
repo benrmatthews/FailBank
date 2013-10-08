@@ -29,6 +29,10 @@ Failbank::Application.routes.draw do
       get :following, :followers
     end
   end
+
+  resources :fails do
+    member { post :vote }
+  end
   
   resources :tags
   resources :relationships, only: [:create, :destroy]

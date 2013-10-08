@@ -11,15 +11,6 @@
   
   <div class="col-md-6">
     
-    <h1>Listing Fails</h1><br />
-
-    <%= form_tag fails_path, method: :get do %>
-      <p>
-        <%= text_field_tag :query, params[:query] %>
-        <%= submit_tag "Search", name: nil %>
-      </p>
-    <% end %>
-    
 <% @fails.each do |fail| %>
 <div class="col-md-12">
   <h3>
@@ -27,7 +18,11 @@
   </h3>
   <span class="timestamp">
     Shared <%= time_ago_in_words(fail.created_at) %> ago by <%= link_to fail.user.name, fail.user %><br>
-    Tags: <%= raw fail.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+    Tags: <%= raw fail.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %><br>
+    <%= pluralize fail.reputation_for(:votes).to_i, "Love" %>
+    <% if current_user && !current_user.voted_for?(fail) %>
+      | <%= link_to "Give love!", vote_fail_path(fail, type: "up"), method: "post" %>
+    <% end %>
     <br />
   </span>
   <br />
