@@ -25,8 +25,8 @@ class Fail < ActiveRecord::Base
   end
 
   def self.tag_counts
-    Tag.select("tags.*, count(taggings.tag_id) as count").
-      joins(:taggings).group("taggings.tag_id")
+    Tag.select("tags.*, count(taggings.id) as count").
+      joins(:taggings).group("tags.id")
   end
   
   def tag_list
