@@ -5,6 +5,6 @@
       Posted <%= time_ago_in_words(fail.created_at) %> ago by <%= link_to fail.user.name, fail.user %>
       | <%= pluralize fail.reputation_for(:votes).to_i, "vote" %>
       | <%= link_to "up", vote_fail_path(fail, type: "up"), method: "post" %>
-      | <%= link_to "down", vote_fail_path(haiku, type: "fail"), method: "post" %>
+      | <%= link_to "down", vote_fail_path(fail, type: "fail"), method: "post" %>
   </span>
   <br />
