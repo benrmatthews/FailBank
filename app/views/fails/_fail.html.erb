@@ -2,9 +2,11 @@
     <span class="content"><%= link_to fail.name, fail %></span>
   </h4>
   <span class="timestamp">
-      Posted <%= time_ago_in_words(fail.created_at) %> ago by <%= link_to fail.user.name, fail.user %>
-      | <%= pluralize fail.reputation_for(:votes).to_i, "vote" %>
-      | <%= link_to "up", vote_fail_path(fail, type: "up"), method: "post" %>
-      | <%= link_to "down", vote_fail_path(fail, type: "fail"), method: "post" %>
+    Shared <%= time_ago_in_words(fail.created_at) %> ago by <%= link_to fail.user.name, fail.user %><br>
+    Tags: <%= raw fail.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %><br>
+    <%= pluralize fail.reputation_for(:votes).to_i, "Love" %>
+    <% if current_user && !current_user.voted_for?(fail) %>
+      | <%= link_to "Give love!", vote_fail_path(fail, type: "up"), method: "post" %>
+    <% end %>
   </span>
   <br />
