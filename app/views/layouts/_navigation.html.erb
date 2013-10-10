@@ -1,4 +1,4 @@
-<div class="navbar navbar navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -8,6 +8,7 @@
           </button>
           <a class="navbar-brand" href="/">fayl</a>
         </div>
+        
         <div class="navbar-collapse in" style="height: auto;">
           <ul class="nav navbar-nav pull-right">
             <% if user_signed_in? %>
@@ -48,9 +49,6 @@
               <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-info"%>
             </form>
           <% end %>
-          
-            
-          
         </div><!--/.navbar-collapse -->
       </div>
-    </div>
+</div>
