@@ -1,4 +1,6 @@
 class Fail < ActiveRecord::Base
+  searchkick
+  
   attr_accessible :description, :lesson, :name, :user_id, :tag_list
   
   has_many :taggings

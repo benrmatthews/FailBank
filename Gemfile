@@ -19,8 +19,8 @@ gem 'simple_form'
 gem 'thin'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'tire'
 gem 'elasticsearch'
+gem 'searchkick'
 gem 'activerecord-reputation-system', require: 'reputation_system'
 
 group :development do
